@@ -41,8 +41,8 @@ export class TexteditorComponent implements OnInit {
           height : this.options.height,
         };
         
-        /** append menu base if required  */
-        if (this.options.isMenuRequired) {
+        /** append menu bar if required  */
+        if (this.options.isMenuBarRequired) {
               this.init["menu"] = {
                                     file: { title: 'File', items: 'newdocument restoredraft | preview | print' },
                                     edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall | searchreplace' },
@@ -53,8 +53,17 @@ export class TexteditorComponent implements OnInit {
                                     table: { title: 'Table', items: 'inserttable | cell row column | tableprops deletetable' },
                                     help: { title: 'Help', items: 'help' }
                                   };
-        }
+        } else {
+          this.init["menubar"] = false;
+       }
         
+        /** append status bar if required  */
+        if (this.options.isStatusBarRequired) {
+            this.init["statusbar"] = true;
+        } else {
+            this.init["statusbar"] = false;
+        }
+
          /** append toolbar if required  */
         if (this.options.isToolbarRequired) {
             this.init["toolbar"] = 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +

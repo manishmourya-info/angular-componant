@@ -8,10 +8,19 @@ export class TextEditorOptions {
    public height : string;
    public isPluginsRequired : boolean = false;
    public isToolbarRequired : boolean = false;
-   public isMenuRequired : boolean = false;
+   public isMenuBarRequired : boolean = false;
+   public isStatusBarRequired : boolean = false;
 
-   constructor(content : string,outputFormat : string,inline: boolean,disabled: boolean
-    ,editorId: string,height:string,isPluginsRequired : boolean,isToolbarRequired : boolean,isMenuRequired : boolean ) {
+   constructor(content : string,
+               outputFormat : string,
+               inline: boolean,
+               disabled: boolean,
+               editorId: string,
+               height:string,
+               isPluginsRequired : boolean,
+               isToolbarRequired : boolean,
+               isMenuRequired : boolean,
+               isStatusBarRequired : boolean) {
         this.content = content;
         this.outputFormat = outputFormat; 
         this.inline = inline;
@@ -20,7 +29,8 @@ export class TextEditorOptions {
         this.height  = height;
         this.isPluginsRequired = isPluginsRequired;
         this.isToolbarRequired = isToolbarRequired;
-        this.isMenuRequired = isMenuRequired;
+        this.isMenuBarRequired = isMenuRequired;
+        this.isStatusBarRequired = isStatusBarRequired;
    }
     
 

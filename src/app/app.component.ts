@@ -9,7 +9,7 @@ import { TextEditorOptions } from './texteditor/texteditoroptions';
 export class AppComponent {
   
   content = '<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>';
-  options =  new TextEditorOptions(this.content,"html", false,false, "text-editor", "500px", true,true,true);
+  options =  new TextEditorOptions(this.content,"html", false,false, "text-editor", "500px", false,false,false,false);
 
   onContentChanged($event) {
     console.log($event);
