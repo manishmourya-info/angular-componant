@@ -39,6 +39,11 @@ export class TexteditorComponent implements OnInit {
           base_url: '/tinymce', 
           suffix: '.min',
           height : this.options.height,
+          branding: false,
+          toolbar :  'undo redo | styleselect | bold italic underline strikethrough '+
+          '| fontsizeselect | alignleft aligncenter alignright alignjustify | ' +
+         ' bullist numlist outdent indent | forecolor backcolor | fullscreen',
+          plugins : ['lists fullscreen'],
         };
         
         /** append menu bar if required  */
@@ -54,7 +59,7 @@ export class TexteditorComponent implements OnInit {
                                     help: { title: 'Help', items: 'help' }
                                   };
         } else {
-          this.init["menubar"] = false;
+            this.init["menubar"] = false;
        }
         
         /** append status bar if required  */
@@ -66,18 +71,12 @@ export class TexteditorComponent implements OnInit {
 
          /** append toolbar if required  */
         if (this.options.isToolbarRequired) {
-            this.init["toolbar"] = 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                                  'bullist numlist outdent indent | link image | print preview media fullpage | ' +
-                                  'forecolor backcolor emoticons | help';
+              this.init["toolbar"] = 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor emoticons casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | help';
         }
 
          /** associate plugins with editor for advance options */
         if (this.options.isPluginsRequired) {
-            this.init["plugins"] = [
-                                    'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-                                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                                    'table emoticons template paste help'
-                                  ];
+            this.init["plugins"] = [ 'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template paste help'];
         }
   }
  
