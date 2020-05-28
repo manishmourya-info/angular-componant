@@ -40,9 +40,7 @@ export class TexteditorComponent implements OnInit {
           suffix: '.min',
           height : this.options.height,
           branding: false,
-          toolbar :  'undo redo | styleselect | bold italic underline strikethrough '+
-          '| fontsizeselect | alignleft aligncenter alignright alignjustify | ' +
-         ' bullist numlist outdent indent | forecolor backcolor | fullscreen',
+          toolbar :  'bold italic underline strikethrough | fullscreen',
           plugins : ['lists fullscreen'],
         };
         
@@ -60,7 +58,7 @@ export class TexteditorComponent implements OnInit {
                                   };
         } else {
             this.init["menubar"] = false;
-       }
+        }
         
         /** append status bar if required  */
         if (this.options.isStatusBarRequired) {
